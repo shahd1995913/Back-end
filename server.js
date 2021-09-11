@@ -1,5 +1,7 @@
 'use strict'
 
+// In order Important Essental --
+
 // Import For Express
 const express = require('express');
 
@@ -7,8 +9,13 @@ const express = require('express');
 // i will use server .method i want  take all fun came from express
 //and put it in server 
 
-const server =express();
+// // must install npm i cors
+const cors =require('cors');
+// // make server open for any client by cors 
 
+
+const server =express();
+server.use(cors()); 
 
 // To run the server I want Port in server  
 // every server have  one port at least 
@@ -150,7 +157,9 @@ console.log(`I am listening on ${Port}`);
 
 })
 
-
+// must be the last one 
+ server.get('*',(a,b)=>{
+ b.status(404).send('Sorry ,The page not Found');})
 
 
 
