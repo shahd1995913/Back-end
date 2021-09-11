@@ -4,7 +4,8 @@
 
 // Import For Express
 const express = require('express');
-
+// import to env
+require('dotenv').config();
 // Server or APP must be named  every thing will be in server 
 // i will use server .method i want  take all fun came from express
 //and put it in server 
@@ -19,8 +20,11 @@ server.use(cors());
 
 // To run the server I want Port in server  
 // every server have  one port at least 
- // portt 3010
-const Port =3010;
+// portt 3010
+// process.env.PORT; for heriko  https://dashboard.heroku.com/new-app
+// MUst PORT in Captial latters
+//  npm i dotenv install must 
+const PORT = process.env.PORT;
 // To listen to the this port only 
 
 // how can the client side sent to me requst use the  get
@@ -142,14 +146,14 @@ b.status(200).send(Pdata);
 // server.get('*',(a,b)=>{
 // b.status(404).send('Sorry ,The page not Found');})
 
-server.listen(Port,()=>
+server.listen(PORT,()=>
 {
     // consol .log  apper in termenal not in the browser  becouse we do not have html 
     // develp the server  side only
     // there is no html file
     // the result only in the terminl it self
 
-console.log(`I am listening on ${Port}`);
+console.log(`I am listening on ${PORT}`);
 // node server.js" to get the result
 // i must to stop the server  save  for update the change
 // stop server  and run t again when there is a update 
