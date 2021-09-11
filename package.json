@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/shahd1995913/Back-end#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   }
 }
